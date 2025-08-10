@@ -1,10 +1,13 @@
 (function() {
-    let score = { O: 0, X: 0 };
+    let score;
 
     document.addEventListener('DOMContentLoaded', () => {
         let turn = 0;
         let positions = [];
         let playing = true;
+        score = score || { O: 0, X: 0 };
+        score.O = score.O || 0;
+        score.X = score.X || 0;
         for (const button of Array.from(document.querySelectorAll('.tic-tac-toe-btn'))) {
             const position = positions.length;
             positions.push('_');
