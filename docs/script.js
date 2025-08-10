@@ -60,7 +60,9 @@
     
     try {
         score = JSON.parse(sessionStorage.getItem('score')) ?? score;
-    } catch {}
+    } catch (err) {
+        console.error(err);
+    }
 
     function checkWin(positions) {
         let sideLength = (positions.length ** 0.5) | 0;
@@ -120,5 +122,4 @@
         }
         return null;
     }
-    
 })();
